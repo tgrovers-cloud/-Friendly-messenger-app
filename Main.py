@@ -7,7 +7,7 @@ from models import User
 from schemas import RegisterRequest, LoginRequest, TokenResponse, MeResponse
 from auth import hash_password, verify_password, create_access_token, decode_token
 
-app = FastAPI(title="Messenger API")
+app = FastAPI(title="Friendly Messenger API")
 
 app.add_middleware(
     CORSMiddleware,
