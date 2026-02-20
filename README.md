@@ -1,31 +1,28 @@
-💬 Friendly Messenger
+**💬 Friendly Messenger — Real-Time Chat App**
 
-A simple full-stack real-time chat application
+**Full-stack messaging app with authentication and real-time updates**
 
-Overview
+**Why this project matters**
 
-Friendly Messenger is a lightweight 1-to-1 messaging app where users can register, log in, start conversations by username, and exchange messages in real time.
+This project shows my understanding of full-stack development, including backend APIs, databases, authentication, and frontend state management.
 
-The project was built to practice authentication, API design, database modeling, and real-time communication.
+**What it does**
 
-Features
+User registration and login
 
-👤 User registration and login
+JWT-based authentication
 
-🔐 JWT-based authentication
+One-to-one conversations by username
 
-💬 One-to-one conversations
+Send and receive messages in real time
 
-📡 Real-time messaging with WebSockets
+Message history stored in a database
 
-📬 Message history stored in a database
+Unread message tracking
 
-🔔 Unread message tracking
+**Tech Stack**
 
-🎨 Auto-generated avatars from usernames
-
-Tech Stack
-Backend
+**Backend**
 
 FastAPI
 
@@ -37,54 +34,54 @@ JWT authentication
 
 WebSockets
 
-Frontend
+**Frontend**
 
 React
 
 Fetch API
 
-LocalStorage for session + unread tracking
+LocalStorage
 
-How It Works (Simple Explanation)
+**How it works (simple)**
 
-Users register and log in using a username and password.
+Users register and log in with a username and password.
 
 Passwords are hashed before being stored.
 
-On login, the backend returns a JWT token.
+On login, the backend issues a JWT token.
 
-The frontend stores the token and sends it with every request.
+The frontend sends the token with every request.
 
-Users can start a conversation by entering another username.
+Messages are saved to the database and broadcast via WebSockets.
 
-Messages are saved to the database.
+**Key Skills Demonstrated**
 
-When a message is sent, the backend broadcasts it via WebSockets to everyone in that conversation.
+REST API design with FastAPI
 
-Why JWT + WebSockets?
+Authentication and authorization using JWT
 
-JWT keeps the backend stateless and simple.
+Database modeling and ORM usage
 
-WebSockets allow messages to appear instantly without refreshing.
+Real-time communication with WebSockets
 
-Access control ensures only conversation members can read/send messages.
+Frontend state management in React
 
-What I Learned
+**What I learned**
 
-Designing REST APIs with authentication
+How to build a secure auth flow from scratch
 
-Using WebSockets for real-time updates
+How to design relational data models
 
-Managing frontend state for unread messages
+How WebSockets work in practice
 
-Structuring a full-stack app from scratch
+How frontend and backend stay in sync
 
-Possible Improvements
+**Improvements I’d make next**
 
-Persist WebSocket connections with Redis
+Add group chats
 
-Group chats
+Replace polling with full WebSocket sync
 
-Message read receipts
+Add typing indicators and read receipts
 
-Deployment with Docker
+Deploy with Docker
