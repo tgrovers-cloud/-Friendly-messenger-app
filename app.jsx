@@ -3,7 +3,6 @@ import logo from "./assets/logo.png";
 
 const API_BASE = "http://192.168.1.62:8000";
 
-// --- localStorage keys
 const LS_TOKEN = "token";
 const LS_LAST_SEEN = "last_seen_by_convo_v1"; // { [convoId]: lastSeenMessageId }
 
@@ -99,7 +98,6 @@ async function api(path, { method = "GET", token, body } = {}) {
   return data;
 }
 
-// Sidebar is outside App to avoid remount/focus bugs
 const Sidebar = memo(function Sidebar({
   me,
   conversations,
@@ -426,7 +424,6 @@ export default function App() {
     };
   }, [token, me, selectedId, lastSeenByConvo]);
 
-  // Background: update previews/unread for ALL conversations (lightweight)
   useEffect(() => {
     if (!token || !me || conversations.length === 0) return;
 
@@ -436,7 +433,6 @@ export default function App() {
       try {
         const updates = {};
 
-        // small concurrency: do sequential to keep it simple/stable
         for (const c of conversations) {
           const msgs = await api(`/conversations/${c.id}/messages`, { token });
           if (cancelled) return;
@@ -564,7 +560,6 @@ export default function App() {
     }
   }
 
-  // Mark selected conversation as "seen" when user opens it AND when user scrolls to bottom
   useEffect(() => {
     if (!selectedId) return;
     // once it loads, mark as seen
